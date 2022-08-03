@@ -13,18 +13,13 @@ export default {
     return [
       {
         slug: "top-rated",
-        title: "Mieux notés",
+        title: "Films mieux notés",
         items: await fetchMovies("movie/top_rated"),
       },
       {
         slug: "trend-allweek",
-        title: "Tendance",
-        items: await fetchMovies("trending/all/week"),
-      },
-      {
-        slug: "action",
-        title: "Action",
-        items: await fetchMovies("discover/movie?with_genres=28"),
+        title: "Films tendance de la semaine",
+        items: await fetchMovies("trending/movie/week"),
       },
       {
         slug: "upcoming",
@@ -37,20 +32,33 @@ export default {
         items: await fetchMovies("movie/now_playing"),
       },
       {
-        slug: "tvpopular",
+        slug: "popular-tv",
         title: "Séries populaires",
         items: await fetchMovies("tv/popular"),
       },
       {
-        slug: "ontheair",
-        title: "A l'écran",
-        items: await fetchMovies("tv/on_the_air"),
-      },
-      {
-        slug: "popular-tv",
-        title: "Séries populaires Netflix",
-        items: await fetchMovies("discover/tv?with_type=2"),
+        slug: "tv-toprated",
+        title: "Série bien notées",
+        items: await fetchMovies("tv/top_rated"),
       },
     ]
+  },
+
+  getyMovieInfo: async (movieId, type) => {
+    let info = []
+    if (movieId) {
+      switch (type) {
+        case "movie":
+          info = await fetchMovies(`movie/${movieId}`)
+          break
+        case "tv":
+          info = await fetchMovies(`tv/${movieId}`)
+          break
+
+        default:
+          break
+      }
+    }
+    return info
   },
 }
