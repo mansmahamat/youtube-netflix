@@ -15,17 +15,16 @@
     width: 9999999999px;
 }
 
-.movieRow--item{
+.movieRow--item {
     display: inline-block;
-    width: 150px;
     cursor: pointer;
-    
 }
 
 .movieRow--item img {
-    width: 100%;
+    width: 180px;
+    height: 240px;
     transform: scale(0.9);
-    transition:all ease (0.2s);
+    transition: all ease 0.2s;
 }
 
 .movieRow--item img:hover {
