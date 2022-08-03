@@ -39,7 +39,7 @@ function MovieSection({ title, items }) {
       </div>
       <div className="movieRow--listarea">
         <div className="movieRow--list">
-          {items.results.length > 0 &&
+          {items.results?.length > 0 &&
             items.results.map((item, key) => (
               <div className="movieRow--item" key={key}>
                 <img

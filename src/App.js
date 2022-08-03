@@ -19,7 +19,7 @@ function App() {
       let originals = list.filter((oneMovie) => oneMovie.slug === "top-rated")
 
       let chooseRandomMovie = Math.floor(
-        Math.random() * (originals[0].items.results.length - 1)
+        Math.random() * (originals[0].items.results?.length - 1 || 0)
       )
       let chosen = originals[0].items.results[chooseRandomMovie]
       let chosenInfo = await ApiMovie.getyMovieInfo(chosen.id, "movie")
