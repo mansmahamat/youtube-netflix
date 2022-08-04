@@ -48,7 +48,7 @@ export default {
       },
       {
         slug: "tv-toprated",
-        title: "Série bien notées",
+        title: "Séries bien notées",
         items: await fetchMovies("tv/top_rated"),
       },
     ]
