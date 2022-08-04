@@ -12,7 +12,10 @@
 }
 
 .movieRow--list {
-    width: 9999999999px;
+    width: 100%;
+    overflow: auto;
+    white-space: nowrap;
+    overflow-x: hidden;
 }
 
 .movieRow--item {
